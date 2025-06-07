@@ -1,0 +1,35 @@
+<h2 class="page-title">🕒 Select a Delivery Time Slot</h2>
+
+<div *ngIf="loading" class="loading-text">Loading available slots...</div>
+
+<div *ngIf="!loading" class="slot-container">
+  <label for="dateSelect"><strong>📅 Choose a Date:</strong></label>
+  <select id="dateSelect" [(ngModel)]="selectedDate" class="date-select">
+    <option *ngFor="let date of getAvailableDates()" [value]="date">
+      {{ date | date: 'fullDate' }}
+    </option>
+  </select>
+
+  <div class="slot-grid" *ngIf="selectedDate">
+    <div
+      *ngFor="let slot of groupedSlots[selectedDate]"
+      class="slot-card"
+      [ngClass]="{ selected: slot === selectedSlot }"
+    >
+      <p class="slot-time">{{ slot.slot | date: 'h:mm a' }}</p>
+      <p class="slot-type">
+        <span class="status-icon" [ngClass]="slot.isGreen ? 'green' : 'gray'"></span>
+        {{ slot.isGreen ? 'Green Slot 🌿' : 'Standard Slot' }}
+      </p>
+
+      <button class="select-btn" (click)="selectSlot(slot)">Select</button>
+    </div>
+  </div>
+
+  <div *ngIf="selectedSlot" class="confirm-section">
+    <p><strong>✅ Selected Slot:</strong><br>
+      {{ selectedSlot.slot | date: 'fullDate' }} at {{ selectedSlot.slot | date: 'h:mm a' }}</p>
+
+    <button class="place-btn" (click)="placeOrder()">🚀 Place Order</button>
+  </div>
+</div>

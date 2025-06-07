@@ -1,0 +1,19 @@
+<h2></h2>
+
+<div class="product-filters">
+  <button (click)="loadProducts('')">All</button>
+  <button (click)="loadProducts('InStock')">InStock</button>
+  <button (click)="loadProducts('Fresh')">Fresh</button>
+  <button (click)="loadProducts('External')">External</button>
+</div>
+
+<div class="grid-container">
+  <div class="product-card" *ngFor="let product of products">
+    <h4>{{ product.name }}</h4>
+    <img [src]="product.imageUrl" alt="Product Image" width="180" />
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Price:</strong> {{ product.price }}</p>
+    <p><strong>Type:</strong> {{ product.type }}</p>
+    <button (click)="addToCart(product.id)">Add to Cart</button>
+  </div>
+</div>
