@@ -37,15 +37,25 @@ export class TimeSlotsComponent implements OnInit {
     });
   }
 
+
+
   groupSlotsByDate(slots: any[]): { [date: string]: any[] } {
-    const grouped: { [date: string]: any[] } = {};
-    slots.forEach(slot => {
-      const date = new Date(slot.slot).toISOString().split('T')[0];
-      if (!grouped[date]) grouped[date] = [];
-      grouped[date].push(slot);
-    });
-    return grouped;
+  const grouped: { [date: string]: any[] } = {};
+
+  slots.forEach(slot => {
+    const date = new Date(slot.slot).toISOString().split('T')[0];
+    if (!grouped[date]) grouped[date] = [];
+    grouped[date].push(slot);
+  });
+
+  
+  for (const date in grouped) {
+    grouped[date].sort((a, b) => new Date(a.slot).getTime() - new Date(b.slot).getTime());
   }
+
+  return grouped;
+}
+
 
   getAvailableDates(): string[] {
     return Object.keys(this.groupedSlots);

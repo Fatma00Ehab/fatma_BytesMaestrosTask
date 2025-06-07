@@ -10,31 +10,77 @@ import { OrderService } from '../../services/order.service';
 export class CartComponent implements OnInit {
 
   cartItems: any[] = [];
-    totalPrice: number = 0;
+  totalPrice: number = 0;
+  selectedSlot: string = '';
 
-  selectedSlot: string = '';  
-
-  constructor(private cartService: CartService, private orderService: OrderService) {}
+  constructor(
+    private cartService: CartService,
+    private orderService: OrderService
+  ) {}
 
   ngOnInit(): void {
-    this.cartService.getCart().subscribe(data => {
-      this.cartItems = data;
-      this.totalPrice = this.calculateTotalPrice();
+    this.loadCart();
+  }
+
+   loadCart() {
+    this.cartService.getCart().subscribe({
+      next: (items) => {
+        this.cartItems = items;
+        this.totalPrice = this.calculateTotalPrice();
+      },
+      error: (err) => {
+        console.error("Cart loading failed:", err);
+      }
     });
   }
-  calculateTotalPrice(): number {
-    return this.cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+
+   calculateTotalPrice(): number {
+    return this.cartItems.reduce((sum, item) => 
+      sum + (item?.product?.price || 0) * (item?.quantity || 0), 0
+    );
   }
 
-  placeOrder() {
-    this.orderService.placeOrder(this.selectedSlot).subscribe(res => {
-      alert('Order placed');
-    });
-  }
+  
+  
 
-
+  removeItem(itemId: number) {
+  this.cartService.removeCartItem(itemId).subscribe({
+    next: () => {
+      console.log('Item removed');
+      this.loadCart();   
+    },
+    error: (error) => {
+      console.error('Remove failed:', error);
+    }
+  });
 }
 
 
+  
+  clearCart() {
+    this.cartService.clearCart().subscribe({
+      next: () => this.loadCart(),
+      error: (err) => {
+        console.error("Clear failed:", err);
+      }
+    });
+  }
 
- 
+   placeOrder() {
+    if (!this.selectedSlot) {
+      alert("Please select a delivery time slot.");
+      return;
+    }
+
+    this.orderService.placeOrder(this.selectedSlot).subscribe({
+      next: () => {
+        alert("Order placed successfully!");
+        this.clearCart(); 
+      },
+      error: (err) => {
+        console.error("Order placement failed:", err);
+        alert("Failed to place order.");
+      }
+    });
+  }
+}

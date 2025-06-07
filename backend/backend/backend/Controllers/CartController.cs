@@ -64,14 +64,18 @@ namespace backend.Controllers
         public async Task<IActionResult> Remove(int id)
         {
             await _cartRepo.RemoveFromCartAsync(id);
-            return Ok("Removed.");
+            
+            return Ok(new { message = "Removed." });
+
         }
 
         [HttpDelete("clear")]
         public async Task<IActionResult> Clear()
         {
             await _cartRepo.ClearCartAsync();
-            return Ok("Cleared.");
+            
+            return Ok(new { message = "Cleared." });
+
         }
     }
 

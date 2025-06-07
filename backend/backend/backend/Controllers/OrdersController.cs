@@ -39,7 +39,7 @@ namespace backend.Controllers
 
             DateTime earliest = now;
 
-            // External: Requires 3 days + Tue-Fri
+            // External-> Requires 3 days , Tue-Fri
             if (hasExternal)
             {
                 earliest = earliest.Date.AddDays(3);
@@ -47,7 +47,7 @@ namespace backend.Controllers
                     earliest = earliest.AddDays(1);
             }
 
-            // Fresh: Cutoff is 12:00 same-day
+            // Fresh-> Cutoff is 12:00 same-day
             var minFreshDate = hasFresh && now.Hour >= 12 ? now.Date.AddDays(1) : now.Date;
 
             // InStock: Cutoff is 18:00 same-day

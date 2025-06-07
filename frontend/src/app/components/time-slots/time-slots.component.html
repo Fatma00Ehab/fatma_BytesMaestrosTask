@@ -19,7 +19,9 @@
       <p class="slot-time">{{ slot.slot | date: 'h:mm a' }}</p>
       <p class="slot-type">
         <span class="status-icon" [ngClass]="slot.isGreen ? 'green' : 'gray'"></span>
-        {{ slot.isGreen ? 'Green Slot 🌿' : 'Standard Slot' }}
+       
+        {{ slot.isGreen ? '🌱 Go Green' : '🚚 Normal Delivery' }}
+
       </p>
 
       <button class="select-btn" (click)="selectSlot(slot)">Select</button>
@@ -30,6 +32,6 @@
     <p><strong>✅ Selected Slot:</strong><br>
       {{ selectedSlot.slot | date: 'fullDate' }} at {{ selectedSlot.slot | date: 'h:mm a' }}</p>
 
-    <button class="place-btn" (click)="placeOrder()">🚀 Place Order</button>
+    <button class="place-btn" (click)="placeOrder()">Place Order</button>
   </div>
 </div>

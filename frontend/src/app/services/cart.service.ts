@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
@@ -15,7 +16,21 @@ export class CartService {
     return this.http.post(`${this.baseUrl}`, { productId, quantity });
   }
 
-  clearCart() {
-    return this.http.delete(`${this.baseUrl}/clear`);
-  }
+  
+
+ 
+
+removeCartItem(id: number): Observable<any> {
+  return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+}
+
+
+
+clearCart(): Observable<any> {
+  return this.http.delete(`https://localhost:7148/api/Cart/clear`, {
+    responseType: 'text'
+  });
+}
+
+
 }
