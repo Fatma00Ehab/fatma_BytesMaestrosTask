@@ -103,10 +103,7 @@ namespace backend.Controllers
             if (!cartItems.Any())
                 return BadRequest("Cart is empty.");
 
-            bool slotTaken = await _orderRepo.IsSlotAlreadyBookedAsync(selectedDeliverySlot);
-            if (slotTaken)
-                return BadRequest("Selected delivery slot is already booked.");
-
+           
             
             var orderDetails = cartItems.Select(ci => new OrderDetail
             {

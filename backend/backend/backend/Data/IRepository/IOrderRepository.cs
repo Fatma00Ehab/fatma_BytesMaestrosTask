@@ -6,7 +6,6 @@ namespace backend.Data.IRepository
     {
         Task CreateOrderAsync(Order order);
         Task<List<Order>> GetAllOrdersAsync();
-        Task<bool> IsSlotAlreadyBookedAsync(DateTime slot);
-
+ 
     }
 }

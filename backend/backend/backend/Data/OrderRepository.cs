@@ -30,11 +30,7 @@ namespace backend.Data
         }
 
          
-
-        public async Task<bool> IsSlotAlreadyBookedAsync(DateTime slot)
-        {
-            return await _context.Orders.AnyAsync(o => o.DeliveryDateTime == slot);
-        }
+ 
 
     }
 
