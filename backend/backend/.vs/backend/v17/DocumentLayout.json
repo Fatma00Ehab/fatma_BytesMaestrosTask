@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "E:\\fatma_BytesMaestrosTask\\backend\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8F78A263-9F0A-48F7-A5BF-B58B9E407EA1}|backend\\backend.csproj|E:\\fatma_BytesMaestrosTask\\backend\\backend\\backend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F78A263-9F0A-48F7-A5BF-B58B9E407EA1}|backend\\backend.csproj|e:\\fatma_bytesmaestrostask\\backend\\backend\\backend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F78A263-9F0A-48F7-A5BF-B58B9E407EA1}|backend\\backend.csproj|solutionrelative:backend\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{8F78A263-9F0A-48F7-A5BF-B58B9E407EA1}|backend\\backend.csproj|solutionrelative:backend\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F78A263-9F0A-48F7-A5BF-B58B9E407EA1}|backend\\backend.csproj|e:\\fatma_bytesmaestrostask\\backend\\backend\\backend\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F78A263-9F0A-48F7-A5BF-B58B9E407EA1}|backend\\backend.csproj|E:\\fatma_BytesMaestrosTask\\backend\\backend\\backend\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F78A263-9F0A-48F7-A5BF-B58B9E407EA1}|backend\\backend.csproj|solutionrelative:backend\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -246,8 +246,7 @@
               "RelativeToolTip": "backend\\Controllers\\OrdersController.cs",
               "ViewState": "AQIAAFcAAACAMzMzMzMwwIgAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T19:17:04.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T19:17:04.679Z"
             },
             {
               "$type": "Document",
@@ -259,8 +258,7 @@
               "RelativeToolTip": "backend\\Controllers\\CartController.cs",
               "ViewState": "AQIAADgAAAAAAAAAAAAgwBoAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T19:09:47.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T19:09:47.019Z"
             },
             {
               "$type": "Document",
@@ -477,8 +475,7 @@
               "RelativeToolTip": "backend\\Helpers\\UploadHandler.cs",
               "ViewState": "AQIAAAYAAAAAMjMzMzPjvxQAAABjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T10:54:03.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-04T10:54:03.884Z"
             }
           ]
         },
