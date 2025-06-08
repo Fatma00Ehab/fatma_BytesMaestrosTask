@@ -12,7 +12,7 @@
         public static UploadResult Upload(IFormFile file, string folder)
         {
             //extension
-            List<string> validExtentions = new List<string>() { ".jpg", ".png", ".jpeg" };
+            List<string> validExtentions = new List<string>() { ".jpg", ".png", ".jpeg", ".webp" };
             string extention = Path.GetExtension(file.FileName);
             if (!validExtentions.Contains(extention))
             {
